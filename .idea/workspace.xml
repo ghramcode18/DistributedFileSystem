@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5564859c-28f3-4d29-8a19-f0e8ef2edba6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DistributedFileSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ClientApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coordinator/CoordinatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coordinator/CoordinatorServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/AutoSyncThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/DailySync.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/NodeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/NodeServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/SyncClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/SyncHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/SyncServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/CoordinatorInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/FileRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/NodeInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageA/secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageA/secret.yaml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageA/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageA/test.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageB/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageC/secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageC/test.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2xY1RR3gkjJhBWWW05GtW51sd5j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/ghram/Documents/Github/DistributedFileSystem"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.NodeServer">
+    <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.ClientApp" />
+      <module name="DistributedFileSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoordinatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorServer" />
+      <module name="DistributedFileSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="coordinator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="node.NodeServer" />
+      <module name="DistributedFileSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="node.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.NodeServer" />
+        <item itemvalue="Application.ClientApp" />
+        <item itemvalue="Application.CoordinatorServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5564859c-28f3-4d29-8a19-f0e8ef2edba6" name="Changes" comment="" />
+      <created>1748100186047</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748100186047</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
