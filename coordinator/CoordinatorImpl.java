@@ -107,26 +107,38 @@ public class CoordinatorImpl extends UnicastRemoteObject implements CoordinatorI
     }
 
 
-    @Override
-    public boolean deleteFile(String fileName, String username) throws RemoteException {
-        User user = users.get(username);
-        if (user == null) return false;
+@Override
+public boolean deleteFile(String fileName, String username) throws RemoteException {
+    User user = users.get(username);
+    if (user == null) return false;
 
-        for (String nodeName : new ArrayList<>(nodes.keySet())) {
-            try {
-                NodeInterface node = nodes.get(nodeName);
-                FileRecord file = node.retrieveFile(fileName);
-                if (file != null && file.getDepartment().equals(user.getDepartment())) {
-                    deletedFiles.add(fileName); // 🟢 سجل الحذف هنا
-                    return node.removeFile(fileName);
+    boolean deletedAtLeastOnce = false;
+
+    // نمر على جميع العقد المسجلة
+    for (String nodeName : new ArrayList<>(nodes.keySet())) {
+        try {
+            NodeInterface node = nodes.get(nodeName);
+            FileRecord file = node.retrieveFile(fileName);
+
+            if (file != null) {
+                // إذا قسم الملف يطابق قسم المستخدم → احذف النسخة
+                if (file.getDepartment().equals(user.getDepartment())) {
+                    boolean removed = node.removeFile(fileName);
+                    System.out.println("Deleted from " + nodeName + ": " + fileName + " (dept matched)");
+                    deletedAtLeastOnce |= removed;
+                } else {
+                    System.out.println("Skipped " + nodeName + " for " + fileName + " (dept mismatch)");
                 }
-            } catch (Exception e) {
-                System.out.println("⚠️ Node " + nodeName + " unreachable during delete.");
-                nodes.remove(nodeName);
             }
+        } catch (Exception e) {
+            System.out.println("⚠️ Node " + nodeName + " unreachable during delete.");
+            // نواصل مع باقي العقد حتى لو هذه غير متاحة
         }
-        return false;
     }
+
+    return deletedAtLeastOnce;
+}
+
 
 
 

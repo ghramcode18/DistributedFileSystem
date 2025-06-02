@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5564859c-28f3-4d29-8a19-f0e8ef2edba6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DistributedFileSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/ClientApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coordinator/CoordinatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coordinator/CoordinatorServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/AutoSyncThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/DailySync.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/NodeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/NodeServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/SyncClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/SyncHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/SyncServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/CoordinatorInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/FileRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/NodeInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageA/secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageA/secret.yaml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageA/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageA/test.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageB/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageC/secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storageC/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageB/test.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storageC/test.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coordinator/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/coordinator/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/AutoSyncThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/AutoSyncThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/NodeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/NodeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/SyncClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/SyncClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/SyncHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/SyncHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/NodeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/NodeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storageA/secret.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storageA/secret.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storageC/secret.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +41,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/ghram/Documents/Github/DistributedFileSystem"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ghram/Documents/Github/DistributedFileSystem&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.NodeServer">
     <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.ClientApp" />
@@ -97,6 +85,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="DistributedFileSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="DistributedFileSystem" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

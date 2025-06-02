@@ -11,4 +11,6 @@ public interface NodeInterface extends Remote {
     boolean removeFile(String fileName) throws RemoteException;
     List<String> getFileNames() throws RemoteException;
     String getNodeName() throws RemoteException;
+    void markAsDeleted(String fileName) throws RemoteException;
+
 }

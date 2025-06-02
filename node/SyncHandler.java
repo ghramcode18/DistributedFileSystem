@@ -1,12 +1,15 @@
 package node;
 
+import shared.FileRecord; // 👈 ضروري
+
 import java.io.*;
 import java.net.Socket;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption; // 👈 كمان ضروري
 
 public class SyncHandler extends Thread {
-
     private final Socket socket;
     private final String storagePath;
 
@@ -15,19 +18,23 @@ public class SyncHandler extends Thread {
         this.storagePath = storagePath;
     }
 
+    @Override
     public void run() {
         try (
-                DataInputStream in = new DataInputStream(socket.getInputStream())
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream())
         ) {
-            String fileName = in.readUTF();
-            int length = in.readInt();
-            byte[] content = new byte[length];
-            in.readFully(content);
+            FileRecord record = (FileRecord) in.readObject();
 
-            Files.write(Paths.get(storagePath + "/" + fileName), content);
-            System.out.println("File synced: " + fileName);
+            // اكتب الملف الفعلي
+            Path filePath = Paths.get(storagePath, record.getFileName());
+            Files.write(filePath, record.getContent());
 
-        } catch (IOException e) {
+            // اكتب .meta بالقسم مباشرة
+            Path metaPath = Paths.get(storagePath, record.getFileName() + ".meta");
+            Files.writeString(metaPath, record.getDepartment(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+            System.out.println("✅ Synced file: " + record.getFileName() + " (dept: " + record.getDepartment() + ")");
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
