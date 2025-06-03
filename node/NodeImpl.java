@@ -43,11 +43,9 @@ public boolean storeFile(FileRecord file) {
     ReentrantLock lock = fileLocks.computeIfAbsent(file.getFileName(), k -> new ReentrantLock());
     lock.lock();
     try {
-        // (أ) حفظ الملف الفعلي
         Path filePath = Paths.get(storagePath, file.getFileName());
         Files.write(filePath, file.getContent());
 
-        // (ب) حفظ ملف metadata باسم "<fileName>.meta" يحتوي قسم الملف
         Path metaPath = Paths.get(storagePath, file.getFileName() + ".meta");
         Files.writeString(metaPath, file.getDepartment(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 

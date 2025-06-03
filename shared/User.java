@@ -8,6 +8,16 @@ public class User implements Serializable {
     private String password;
     private String department;
     private boolean isManager;
+    private String token;
+
+// getter & setter
+public String getToken() {
+    return token;
+}
+
+public void setToken(String token) {
+    this.token = token;
+}
 
     public User(String username, String password, String department, boolean isManager) {
         this.username = username;

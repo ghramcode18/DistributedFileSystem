@@ -65,9 +65,31 @@ public class CoordinatorImpl extends UnicastRemoteObject implements CoordinatorI
 
     @Override
     public boolean login(String username, String password) {
-        User user = users.get(username);
-        return user != null && user.getPassword().equals(password);
+    User user = users.get(username);
+
+    if (user != null && user.getPassword().equals(password)) {
+        String token = UUID.randomUUID().toString();
+        user.setToken(token);
+        
+        System.out.println("✅ Login successful. Token for " + username + ": " + token);
+        
+        return true;
     }
+
+    return false;
+}
+
+@Override
+public User getUserByToken(String token) {
+    for (User user : users.values()) {
+        if (token.equals(user.getToken())) {
+            return user;
+        }
+    }
+    return null;
+}
+
+
 
     @Override
     public boolean uploadFile(FileRecord file, String username) throws RemoteException {
@@ -114,14 +136,14 @@ public boolean deleteFile(String fileName, String username) throws RemoteExcepti
 
     boolean deletedAtLeastOnce = false;
 
-    // نمر على جميع العقد المسجلة
+// iterat for all the node
     for (String nodeName : new ArrayList<>(nodes.keySet())) {
         try {
             NodeInterface node = nodes.get(nodeName);
             FileRecord file = node.retrieveFile(fileName);
 
             if (file != null) {
-                // إذا قسم الملف يطابق قسم المستخدم → احذف النسخة
+//if the client dep == the file dep then can delete it
                 if (file.getDepartment().equals(user.getDepartment())) {
                     boolean removed = node.removeFile(fileName);
                     System.out.println("Deleted from " + nodeName + ": " + fileName + " (dept matched)");
@@ -132,7 +154,7 @@ public boolean deleteFile(String fileName, String username) throws RemoteExcepti
             }
         } catch (Exception e) {
             System.out.println("⚠️ Node " + nodeName + " unreachable during delete.");
-            // نواصل مع باقي العقد حتى لو هذه غير متاحة
+//if the node unreachable do not runtime exception
         }
     }
 

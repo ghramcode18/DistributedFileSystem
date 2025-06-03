@@ -12,6 +12,8 @@ public interface CoordinatorInterface extends Remote {
     boolean deleteFile(String fileName, String username) throws RemoteException;
     List<String> listFiles(String requester) throws RemoteException;
     public void registerNode(String nodeName, NodeInterface node)throws RemoteException;
+    User getUserByToken(String token) throws RemoteException;
+
 }
 /*
 
@@ -25,7 +27,7 @@ java node.NodeServer NodeC storageC
 java client.ClientApp
 /home/ghram/Downloads/test.txt
 
-case "NodeA" -> 2000;
+            case "NodeA" -> 2000;
             case "NodeB" -> 2001;
             case "NodeC" -> 2002;
             default -> 2003;

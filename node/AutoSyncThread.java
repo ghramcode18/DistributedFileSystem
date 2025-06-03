@@ -22,7 +22,6 @@ public class AutoSyncThread extends Thread {
     public void run() {
         while (true) {
             try {
-                // 🟡 اقرأ ملفات الحذف من deleted.txt (اختياري، يمكن حذفه لاحقاً إن لم يُستخدم)
                 Set<String> deletedFiles = new HashSet<>();
                 File deletedListFile = new File(storagePath + "/deleted.txt");
                 if (deletedListFile.exists()) {
@@ -36,10 +35,8 @@ public class AutoSyncThread extends Thread {
                 if (files == null) continue;
 
                 for (File file : files) {
-                    // ⚠️ تجاهل ملفات meta و deleted.txt نفسها
                     if (file.getName().endsWith(".meta") || file.getName().equals("deleted.txt")) continue;
 
-                    // ⚠️ تجاهل الملفات المحذوفة (اختياري)
                     if (deletedFiles.contains(file.getName())) continue;
 
                     for (PeerNode peer : peers) {
@@ -47,8 +44,7 @@ public class AutoSyncThread extends Thread {
 
                         try {
                             byte[] content = Files.readAllBytes(file.toPath());
-
-                            // اقرأ القسم من ملف meta إذا موجود
+                            //if the file have meta file then read it
                             String dept = "unknown";
                             File meta = new File(file.getAbsolutePath() + ".meta");
                             if (meta.exists()) {
@@ -73,8 +69,8 @@ public class AutoSyncThread extends Thread {
                 failedPeers.clear();
 
                 System.out.println("✅ Auto-sync cycle completed.\n");
-
-                Thread.sleep(50000); // إجمالي 60 ثانية
+                //every 60 second do the sink
+                Thread.sleep(50000); 
             } catch (Exception e) {
                 e.printStackTrace();
             }
